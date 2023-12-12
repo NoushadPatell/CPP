@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 template <typename T>
 void selectionSort(T arr[], int size) {
     for (int i = 0; i < size - 1; ++i) {
@@ -11,7 +13,7 @@ void selectionSort(T arr[], int size) {
         }
         // Swap the found minimum element with the element at index i
         if (minIndex != i) {
-            std::swap(arr[i], arr[minIndex]);
+            swap(arr[i], arr[minIndex]);
         }
     }
 }
@@ -19,9 +21,9 @@ void selectionSort(T arr[], int size) {
 template <typename T>
 void displayArray(const T arr[], int size) {
     for (int i = 0; i < size; ++i) {
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 }
 
 int main() {
@@ -32,17 +34,17 @@ int main() {
     float floatArray[floatSize] = {3.14f, 2.71f, 1.618f, 0.5f};
 
     // Sorting and displaying integer array
-    std::cout << "Original integer array: ";
+    cout << "Original integer array: ";
     displayArray(intArray, intSize);
     selectionSort(intArray, intSize);
-    std::cout << "Sorted integer array: ";
+    cout << "Sorted integer array: ";
     displayArray(intArray, intSize);
 
     // Sorting and displaying float array
-    std::cout << "\nOriginal float array: ";
+    cout << "\nOriginal float array: ";
     displayArray(floatArray, floatSize);
     selectionSort(floatArray, floatSize);
-    std::cout << "Sorted float array: ";
+    cout << "Sorted float array: ";
     displayArray(floatArray, floatSize);
 
     return 0;
